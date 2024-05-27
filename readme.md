@@ -9,17 +9,17 @@ This repository contains a Python implementation of a discrete event dynamical s
 The state space $\mathcal{X}$ consists of states $X$, each defined by a collection of concepts $\vec{x} \in X$. A state $X$ is a snapshot of the system at a given time, capturing the structure and organization of its nested components.
 
 - **Concepts**: Each concept $\vec{x}$ is represented as a collection (or vector) of components $x_i$:
-  \[
+  $$
   \vec{x} = (x_1, x_2, \ldots, x_n)
-  \]
+  $$
   - **Components**: Each component $x_i$ has content, a version, and a type. It is defined by the following structure:
-    \[
+    $$
     x_i = (\text{content}_i, \text{version}_i, \text{type}_i)
-    \]
+    $$
     - **Component Type**: A component type includes a name and requirements:
-      \[
+      $$
       \text{type}_i = (\text{name}_i, \text{requirements}_i)
-      \]
+      $$
 
 Thus, a state $X$ in the state space $\mathcal{X}$ is a collection of these concepts, each containing a structured collection of components.
 
@@ -28,50 +28,48 @@ Thus, a state $X$ in the state space $\mathcal{X}$ is a collection of these conc
 The state $X$ is updated through revisions or additions of components within the concepts $\vec{x} \in X$. Let $u$ be an input or action that triggers the state update. The state update rules describe how the system evolves over time:
 
 1. **Component Revision**: Each component $x_i$ can be revised, resulting in a new component $x_i^+$ and an updated concept $\vec{x}^+$:
-   \[
+   $$
    x_i^+ = (\text{new\_content}_i, \text{version}_i + 1, \text{type}_i)
-   \]
-   \[
+   $$
+   $$
    \vec{x}^+ = (x_1, \ldots, x_i^+, \ldots, x_n)
-   \]
+   $$
 
 2. **Component Addition**: New components can be added to a concept, extending the vector:
-   \[
+   $$
    \vec{x}' = (x_1, x_2, \ldots, x_n, x_{n+1})
-   \]
+   $$
 
 The overall state update rule is defined as:
-\[
+$$
 X^+ = f(X, u)
-\]
-
+$$
 ### Measurable Outputs
 
 Documents are considered measurable outputs $y$ and are constructed from the state $X$ according to specific templates:
-
-\[
+$$
 y = h(X)
-\]
+$$
 
 Templates define the required pattern of component types for a document. The function $\mathcal{T}(\vec{x})$ checks if a concept $\vec{x}$ is compatible with a template $\mathcal{T}$:
 
-\[
+$$
 \mathcal{T}(\vec{x}) = 
 \begin{cases} 
 1 & \text{if } \vec{x} \text{ is compatible with } \mathcal{T} \\
 0 & \text{otherwise}
 \end{cases}
-\]
+$$
 
 The `document_factory` function creates a document from a concept $\vec{x}$ and a template $\mathcal{T}$, given that $\vec{x}$ is compatible with $\mathcal{T}$:
 
-\[
+$$
 \text{document\_factory}(\vec{x}, \mathcal{T}) = 
 \begin{cases} 
 \text{Document} & \text{if } \mathcal{T}(\vec{x}) = 1 \\
 \text{Error} & \text{if } \mathcal{T}(\vec{x}) = 0
 \end{cases}
-\]
+$$
 
 ## Code Overview
 
