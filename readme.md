@@ -8,57 +8,43 @@ This repository contains a Python implementation of a discrete event dynamical s
 
 The state space $\mathcal{X}$ consists of states $X$, each defined by a collection of concepts $\vec{x} \in X$. A concept $\vec{x}$ is represented as a vector of components $x_i$:
 
-\[
-\vec{x} = (x_1, x_2, \ldots, x_n)
-\]
+$$\vec{x} = (x_1, x_2, \ldots, x_n)$$
 
 Each component $x_i$ can be revised, resulting in a new component $x_i^+$ and an updated concept $\vec{x}^+$:
 
-\[
-\vec{x}^+ = (x_1, \ldots, x_i^+, \ldots, x_n)
-\]
+$$\vec{x}^+ = (x_1, \ldots, x_i^+, \ldots, x_n)$$
 
 Components can also be added to a concept, extending the vector:
 
-\[
-\vec{x}' = (x_1, x_2, \ldots, x_n, x_{n+1})
-\]
+$$\vec{x}' = (x_1, x_2, \ldots, x_n, x_{n+1})$$
 
 ### State Update Rules
 
 The state $X$ is updated through revisions or additions of components in the concepts $\vec{x} \in X$. Let $u$ be an input or action triggering the update. The state update rule is defined as:
 
-\[
-X^+ = f(X, u)
-\]
+$$X^+ = f(X, u)$$
 
 ### Measurable Outputs
 
 Documents are considered measurable outputs $y$ and are constructed from the state $X$ according to specific templates:
 
-\[
-y = h(X)
-\]
+$$y = h(X)$$
 
 Templates define the required pattern of component types for a document. The function $\mathcal{T}(\vec{x})$ checks if a concept $\vec{x}$ is compatible with a template $\mathcal{T}$:
 
-\[
-\mathcal{T}(\vec{x}) = 
+$$\mathcal{T}(\vec{x}) = 
 \begin{cases} 
 1 & \text{if } \vec{x} \text{ is compatible with } \mathcal{T} \\
 0 & \text{otherwise}
-\end{cases}
-\]
+\end{cases}$$
 
 The `document_factory` function creates a document from a concept $\vec{x}$ and a template $\mathcal{T}$, given that $\vec{x}$ is compatible with $\mathcal{T}$:
 
-\[
-\text{document\_factory}(\vec{x}, \mathcal{T}) = 
+$$\text{document\_factory}(\vec{x}, \mathcal{T}) = 
 \begin{cases} 
 \text{Document} & \text{if } \mathcal{T}(\vec{x}) = 1 \\
 \text{Error} & \text{if } \mathcal{T}(\vec{x}) = 0
-\end{cases}
-\]
+\end{cases}$$
 
 ## Code Overview
 
