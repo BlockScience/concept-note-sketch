@@ -46,10 +46,10 @@ $$\mathcal{T}(\vec{x}) =
 
 The `document_factory` function creates a document from a concept $\vec{x}$ and a template $\mathcal{T}$, given that $\vec{x}$ is compatible with $\mathcal{T}$:
 
-$$\text{document\_factory}(\vec{x}, \mathcal{T}) = 
-\begin{cases} 
-\text{Document} & \text{if } \mathcal{T}(\vec{x}) = 1 \\
-\text{Error} & \text{if } \mathcal{T}(\vec{x}) = 0
+$$\text{document_factory}(\vec{x}, \mathcal{T}) = 
+\begin{cases}
+\text{Document} & \text{if } \mathcal{T}(\vec{x}) = 1 \\ 
+\text{Error} & \text{if } \mathcal{T (\vec{x}) = 0 
 \end{cases}$$
 
 ## Code Overview
