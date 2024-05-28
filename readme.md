@@ -38,8 +38,8 @@ $$y = h(\vec{x},\mathcal{T}})$$
 
 Templates define the required pattern of component types for a document. The function $A_\mathcal{T}(\vec{x})$ checks if a concept $\vec{x}$ is compatible with a template $\mathcal{T}$:
 
-$$A_\mathcal{T}(\vec{x}) = 
-\begin{cases} 
+$$A_\mathcal{T}(\vec{x}) =
+\begin{cases}
 1 & \text{if } \vec{x} \text{ is compatible with } \mathcal{T} \\
 0 & \text{otherwise}
 \end{cases}$$
