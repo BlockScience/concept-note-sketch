@@ -49,7 +49,7 @@ The `document_factory`, denoted $h(\vec{x}, \mathcal{T})$ function creates a doc
 $$h(\vec{x}, \mathcal{T}) =
 \begin{cases}
 y & \text{if } A_\mathcal{T}(\vec{x}) = 1 \\
-\text{Error} & \text{if } \mathcal{T (\vec{x}) = 0
+\text{Error} & \text{if } A_\mathcal{T} (\vec{x}) = 0
 \end{cases}$$
 
 ## Code Overview
