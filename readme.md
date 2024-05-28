@@ -34,7 +34,7 @@ $$X^+ = f(X, u)$$
 ### Measurable Outputs
 
 Documents are considered measurable outputs $y$ and are constructed from the state $X$ according to specific templates:
-$$y = h(\vec{x},\mathcal{T}})$$
+$$y = h(\vec{x},\mathcal{T})$$
 
 Templates define the required pattern of component types for a document. The function $A_\mathcal{T}(\vec{x})$ checks if a concept $\vec{x}$ is compatible with a template $\mathcal{T}$:
 
