@@ -34,21 +34,21 @@ $$X^+ = f(X, u)$$
 ### Measurable Outputs
 
 Documents are considered measurable outputs $y$ and are constructed from the state $X$ according to specific templates:
-$$y = h(X)$$
+$$y = h(\vec{x},\mathcal{T}})$$
 
-Templates define the required pattern of component types for a document. The function $\mathcal{T}(\vec{x})$ checks if a concept $\vec{x}$ is compatible with a template $\mathcal{T}$:
+Templates define the required pattern of component types for a document. The function $A_\mathcal{T}(\vec{x})$ checks if a concept $\vec{x}$ is compatible with a template $\mathcal{T}$:
 
-$$\mathcal{T}(\vec{x}) = 
+$$A_\mathcal{T}(\vec{x}) = 
 \begin{cases} 
 1 & \text{if } \vec{x} \text{ is compatible with } \mathcal{T} \\
 0 & \text{otherwise}
 \end{cases}$$
 
-The `document_factory` function creates a document from a concept $\vec{x}$ and a template $\mathcal{T}$, given that $\vec{x}$ is compatible with $\mathcal{T}$:
+The `document_factory`, denoted $h(\vec{x}, \mathcal{T})$ function creates a document from a concept $\vec{x}$ and a template $\mathcal{T}$, given that $\vec{x}$ is compatible with $\mathcal{T}$:
 
-$$\text{document_factory}(\vec{x}, \mathcal{T}) = 
+$$h(\vec{x}, \mathcal{T}) = 
 \begin{cases}
-\text{Document} & \text{if } \mathcal{T}(\vec{x}) = 1 \\ 
+y & \text{if } A_\mathcal{T}(\vec{x}) = 1 \\ 
 \text{Error} & \text{if } \mathcal{T (\vec{x}) = 0 
 \end{cases}$$
 
