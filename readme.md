@@ -46,10 +46,10 @@ $$A_\mathcal{T}(\vec{x}) =
 
 The `document_factory`, denoted $h(\vec{x}, \mathcal{T})$ function creates a document from a concept $\vec{x}$ and a template $\mathcal{T}$, given that $\vec{x}$ is compatible with $\mathcal{T}$:
 
-$$h(\vec{x}, \mathcal{T}) = 
+$$h(\vec{x}, \mathcal{T}) =
 \begin{cases}
-y & \text{if } A_\mathcal{T}(\vec{x}) = 1 \\ 
-\text{Error} & \text{if } \mathcal{T (\vec{x}) = 0 
+y & \text{if } A_\mathcal{T}(\vec{x}) = 1 \\
+\text{Error} & \text{if } \mathcal{T (\vec{x}) = 0
 \end{cases}$$
 
 ## Code Overview
